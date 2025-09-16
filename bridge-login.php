@@ -3,6 +3,8 @@
 try{
     require_once __DIR__."/x.php";
     $userEmail = _validateEmail();
+    $userPassword = _validatePassword();
+
     require_once __DIR__."/db.php";
     $sql = "SELECT * FROM users WHERE user_email = :email";
     $stmt = $_db->prepare($sql);
@@ -20,7 +22,10 @@ try{
         header("Location: /login");
         exit();
     }
-
+    if( ! password_verify($userPassword, $user["user_password"]) ){
+        header("Location: /login");
+        exit();
+    }
     unset($user["user_password"]);
     session_start();    
     $_SESSION["user"] = $user;

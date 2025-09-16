@@ -9,6 +9,7 @@
 
 <form action="bridge-login" method="POST" autocomplete="off">
     <input type="text" name="user_email" placeholder="Email">
+    <input type="password" name="user_password" placeholder="Password">
     <button>Login</button>
 </form>
 </body>

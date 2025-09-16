@@ -18,6 +18,21 @@ function _validateEmail(){
     return $userEmail;
 }
 
+define("passwordMin", 6);
+define("passwordMax", 50);
+function _validatePassword(){
+    $userPassword = trim($_POST['user_password']);
+    if(strlen($userPassword) < passwordMin){
+        throw new Exception("Password min " .passwordMin . " characters", 400);
+    }
+    if(strlen($userPassword) > passwordMax){
+        throw new Exception("Password max " .passwordMax . " characters", 400);
+    }
+
+    return $userPassword;
+}
+
+
 
 function _noCache(){
     header("Cache-Control: no-cache, no-store, must-revalidate");
