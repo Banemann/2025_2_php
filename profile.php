@@ -1,6 +1,12 @@
-<?php 
-        session_start();
-        ?>
+<?php
+require_once __DIR__ ."/x.php";
+_noCache();
+session_start();
+if( ! isset($_SESSION["user"]) ){
+    header("Location: login.php");
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +21,11 @@
 
     <div>
         <?php 
-        echo $_SESSION["userName"]; 
+        echo $_SESSION["user"]["user_pk"]; 
+        echo "<div> ---- </div>";
+        echo $_SESSION["user"]["user_first_name"]; 
+        echo "<div> ---- </div>";
+        echo $_SESSION["user"]["user_email"]; 
         ?>
     </div>
 
