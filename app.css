@@ -6,15 +6,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a{
-    text-decoration: none;
-}
-
 body{
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
 }
+button{
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: rgb(29, 161, 242);
+}
+
+
 
 div#container{
     display: grid;
@@ -27,6 +32,7 @@ div#container{
         grid-column: 1/2;
         display: flex;
         flex-direction: column;
+        gap: 0.1rem;
         height: 100%;
         padding: 1rem 1rem 1rem 5rem;
         a{
@@ -38,17 +44,17 @@ div#container{
                 border-radius: 5rem;
             }
         }
+        button{
+            color: white;
+            background: rgb(50, 50, 50);
+            padding: 0.5rem 1rem;
+            border-radius: 5rem;
+        }
         div{
             margin-top: auto;
             padding: 0.5rem 1rem;
             border-radius: 5rem;
             background-color: rgba(0, 0, 0, 0.5);
-        }
-        button{
-            padding: 0.5rem 1rem;
-            border-radius: 5rem;
-            background-color: rgba(0, 0, 0, 1);
-            color: white;
         }
     }
     main{
@@ -60,47 +66,174 @@ div#container{
         div{
             font-size: 20rem;
         }
+        .post_content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+            padding: 1rem;
+            color: hsla(0, 0%, 0%, 0.5);
+                .thumbnail{
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: grey;
+                    border-radius: 100%;
+                }
+        }
+        .post_actions{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            width: 100%;
+            gap: 1rem;
+            padding: 1rem;
+            button{
+                margin-left: auto;
+                padding: 0.5rem 1rem;
+                color: white;
+                background-color: rgb(50, 50, 50);
+                border-radius: 5rem;
+            }
+        }
+
+    .feed_post{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: #fff;
+        border-bottom: 1px solid #e6ecf0;
+        padding: 1.2rem 1.5rem 1.5rem 1rem;
+        font-size: 1rem;
     }
-    aside{
-        grid-column: 3/4;
+    .feed_post .post_header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .feed_post .thumbnail {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #eee;
+    }
+    .feed_post .user_info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+    .feed_post .user_info .name {
+        font-weight: bold;
+        color: #14171a;
+        font-size: 1.1rem;
+        margin-bottom: 0;
+    }
+    .feed_post .user_info .username {
+        color: #657786;
+        font-size: 0.97rem;
+        margin-bottom: 0;
+    }
+    .feed_post .user_info .time {
+        color: #657786;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+    .feed_post .post_body {
+        margin-left: 3.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .feed_post .post_body p {
+        color: #14171a;
+        font-size: 1.05rem;
+        margin-bottom: 0.3rem;
+    }
+    .feed_post .post_image {
         width: 100%;
+        max-width: 28rem;
+        border-radius: 1rem;
+        margin-top: 0.3rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        object-fit: cover;
+    }
+    }
+
+    aside{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;    
+        grid-column: 3/4;
         height: 100%;
-        margin: 1rem 2rem 1rem 1rem;
+        margin: 1rem 1rem 1rem 1rem;
+        > div{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid rgb(230, 230, 230);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        .likes{        
+            h2{
+                color: black;
+                font-weight: 700;
+                font-size: 1.4rem;
+            }
+            div{
+                display: flex;
+                justify-items: center;
+                div.title{
+                    display: flex;
+                    flex-direction: column;
+                    p:nth-child(2){
+                        font-weight: 700;
+                    }
+                }
+                div.more{
+                    margin-left: auto;
+                }
+            }
+            a{
+                margin-top: auto;
+            }
+        }
         .trending{
             position: sticky;
             top: 1rem;
-        }
-        
-        div.likes, div.trending {
-            height: 20rem;
-            border: 1px solid rgb(230, 230, 230);
             h2{
-                padding: 0.5rem 1rem;
+                font-size: 1.4rem;
             }
-            a{
+            > div{
                 display: flex;
-                padding: 1.4rem 1rem;
-                color: black;
-                flex-direction: row;
-            }
-            button{
-                margin-left: auto;
-                border: none;
-                background-color: inherit;
-                cursor: pointer;
-                padding: 0.5rem 1rem;
-            }
-            button#more{
-                color: rgb(73, 73, 255);
-            }
-            div{
-                width: 100%;
-                display: flex;
-            }
-            .username{
-                font-size: 0.9rem;
-                color: rgb(100, 100, 100);
+                gap: 0.5rem;
+                .thumbnail{
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: gray;
+                    border-radius: 100%;
+                }
+                div.user_info{
+                    p:nth-child(1){
+                        font-weight: bold;
+                    }
+                }
+                button{
+                    margin-left: auto;
+                    padding: 0 1rem;
+                    color: white;
+                    background-color: rgb(50, 50, 50);
+                    border-radius: 5rem;
+                }
             }
         }
-    }
+    }    
 }
+
+
+
+
+
