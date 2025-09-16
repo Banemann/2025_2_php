@@ -35,53 +35,11 @@
 
 
     <main>
-        <div class="post">
-            <div class="post_content">
-                <img class="thumbnail" src="images/1.jpg">            
-                <p>What's happening?</p>
-            </div>
-            <div class="post_actions">
-                <img src="images/media.png" alt="">
-                <img src="images/gif.png" alt="">
-                <img src="images/poll.png" alt="">
-                <img src="images/emoji.png" alt="">
-                <img src="images/schedule.png" alt="">
-                <button>
-                    Post
-                </button>
-            </div>
-        </div>
-
-        <div class="feed">
-            <div class="feed_post">
-                <div class="post_header">
-                    <img class="thumbnail" src="images/2.jpg">            
-                    <div class="user_info">
-                        <p class="name">Elon Musk</p>
-                        <p class="username">@elonmusk</p>
-                        <p class="time">. 2h</p>
-                    </div>
-                </div>
-                <div class="post_body">
-                    <p>This is my first post!</p>
-                    <img class="post_image" src="images/post1.jpg" alt="">
-                </div>
-            </div>
-            <div class="feed_post">
-                <div class="post_header">
-                    <img class="thumbnail" src="images/3.jpg">            
-                    <div class="user_info">
-                        <p class="name">Julia Roberts</p>
-                        <p class="username">@juliaroberts</p>
-                        <p class="time">. 4h</p>
-                    </div>
-                </div>
-                <div class="post_body">
-                    <p>Yoooooooooooooooooooooo</p>
-                    <img class="post_image" src="images/post1.jpg" alt="">
-                </div>
-            </div>
-        </div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
     </main>
 
 
